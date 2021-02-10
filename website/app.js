@@ -15,8 +15,7 @@ document.getElementById('generateBtn').addEventListener('click', (e) => {
   const zipCode = document.getElementById('zip').value;
   const feelings = document.getElementById('feelings').value;
   let country = document.getElementById('country').value;
-  if(zipCode) { // check if zipCode exists
-    country = (country==="") ? "us" : country; // country = us if user didn't select a value.
+  if(zipCode && country!="") { // check if zipCode exists
     console.log(country);
     getTempFromAPI(baseURL, country, zipCode, apiKey)
       .then((userData) => {
@@ -29,11 +28,8 @@ document.getElementById('generateBtn').addEventListener('click', (e) => {
       })
       .then(updateUI);    
   } else {
-    // console.log('Zip code does not exist');
-    alert('Zip code does not exist');
-
+    alert('Please Enter a zip code and choose one of the listed Countries');
   }
-
 });
 
 
