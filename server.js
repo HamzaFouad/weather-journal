@@ -21,23 +21,23 @@ app.use(bodyParser.urlencoded({ extended: false })); // Handle form submissions
 app.use(cors()); //  Cross origin allowance
 
 /* Routes */
-let appData = {}; // Setup empty JS object to act as endpoint for all routes
+let projectData = {}; // Setup empty JS object to act as endpoint for all routes
 
 app.get('/all', (req, res) => {
   console.log('Server-GET /all >> running...: ');
-  console.log('Server-GET /all appData >> ', appData);
-  res.send(appData);
+  console.log('Server-GET /all projectData >> ', projectData);
+  res.send(projectData);
 });
 
 app.post('/add', (req, res) => {
   console.log('Server-POST /add >> running')
-  appData = {
+  projectData = {
     id: v4(),
     date: req.body.date,
     temp: req.body.temp,
     content: req.body.content,
   };
-  // req.get(appData);
+  // req.get(projectData);
 });
 
 
@@ -66,4 +66,4 @@ app.listen(PORT, () => console.log(`Server running on localhost:${PORT}`));
   //   "start": "node server",
   //   "dev": "nodemon server"
   // },
-  
+
