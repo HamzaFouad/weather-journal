@@ -14,19 +14,29 @@ document.getElementById('generateBtn').addEventListener('click', (e) => {
   e.preventDefault(); //
   const zipCode = document.getElementById('zip').value;
   const feelings = document.getElementById('feelings').value;
-  const country = document.getElementById('country').value;
+  let country = document.getElementById('country').value;
+  if(zipCode) { // check if zipCode exists
+    country = (country==="") ? "us" : country; // country = us if user didn't select a value.
+    console.log(country);
+    getTempFromAPI(baseURL, country, zipCode, apiKey)
+      .then((userData) => {
+        console.log('.then userData: ', userData);
+        postData('/add', {
+          date: newDate,
+          temp: userData.main.temp,
+          content: feelings,
+        });
+      })
+      .then(updateUI);    
+  } else {
+    // console.log('Zip code does not exist');
+    alert('Zip code does not exist');
 
-  getTempFromAPI(baseURL, country, zipCode, apiKey)
-    .then((userData) => {
-      console.log('.then userData: ', userData);
-      postData('/add', {
-        date: newDate,
-        temp: userData.main.temp,
-        content: feelings,
-      });
-    })
-    .then(updateUI);
+  }
+
 });
+
+
 
 let postData = async (url = '', data = {}) => {
   const req = await fetch(url, {
