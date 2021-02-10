@@ -37,7 +37,7 @@ app.post('/add', (req, res) => {
     temp: req.body.temp,
     content: req.body.content,
   };
-  req.get(appData);
+  // req.get(appData);
 });
 
 
