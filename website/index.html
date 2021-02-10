@@ -29,9 +29,11 @@
           <div class="holder-country-zip row mb-3">
             <div class="holder-country form-group col-md-6">
               <label for='inputCountry'>Country</label>
-              <select id="country" class="form-select form-select-lg" required aria-label="Default select example">
-                <option disabled hidden><span>Choose...</span></option>
-                <option selected value="US">US</option>
+              <select id="country" class="form-select form-select-lg" required aria-label="Default select example" required>
+                <option disabled selected hidden value="">Choose...</option>
+                <option value="AU">AU</option>
+                <option value="US">US</option>
+                <option value="GB">GB</option>
               </select>
             </div> <!-- End of holder-country div -->
             <div class="holder-zip form-group col-md-6">
@@ -47,7 +49,6 @@
           </div> <!-- End of holder-country-zip div --> 
           
           <div class='units'>
-
           </div>
           
           <div class="holder-feel mb-3">
@@ -69,12 +70,13 @@
             </button>
           </div> <!-- End of submitButton div -->
            
-          <div class="holder-entry text-center form-control form-control-lg">
+          <div id="entryHolder" class="holder-entry text-center form-control form-control-lg">
             <span>Most Recent Entry</span>
-            <div id="entryHolder">
-              <div id="date"></div>
-              <div id="temp"></div>
-              <div id="content"></div>
+            <hr class="holder-headline-borderLine">
+            <div id="entryHolder-content">
+              <div id="date" class="mb-1"></div>
+              <div id="temp" class="mb-1"></div>
+              <div id="content" class="mb-1"></div>
             </div>
           </div> <!-- End of holder-entry div -->
         </form> 

@@ -1,3 +1,9 @@
+/* *, 
+*::before,
+*::after {
+  box-sizing: inherit;
+} */
+
 body {
   background: url('assets/imgs/hq-clouds.jpg') no-repeat center center fixed;
   background-size: cover;
@@ -5,6 +11,9 @@ body {
   color: #212529;
   font-weight: 500;
   line-height: 1.1;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;  
 }
 
 form {
@@ -57,9 +66,21 @@ button > span {
 
 .holder-entry span {
   font-size: 20px;
+  line-height: 20px;
 }
 
 #entryHolder {
+  max-width: 400px;
   font-weight: 500;
   margin-top: 10px;
+  /* overflow: hidden; */
+  font-size: 1rem;
+  position: inherit;
+}
+
+#entryHolder-content {
+  position: relative;
+  overflow-wrap: break-word;
+  overflow:auto;
+  overflow-y:auto;
 }
