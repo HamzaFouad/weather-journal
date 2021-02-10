@@ -1,47 +1,65 @@
 body {
-  background: url('imgs/hq-clouds.jpg') no-repeat center center fixed;
+  background: url('assets/imgs/hq-clouds.jpg') no-repeat center center fixed;
   background-size: cover;
-}
-
-.body-wrapper {
-  margin: 0;
-  display: grid;
-  place-items: center;
-  padding: 8rem;
-}
-
-.app-wrapper {
-  padding: 20px;
-  background: transparent;
-  border-radius: 2rem;
-  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
-  display: flex;
-  height: 120%;
-  width: 40vw;
+  font-family: var(--bs-font-sans-serif);
+  color: #212529;
+  font-weight: 500;
+  line-height: 1.1;
 }
 
 form {
   min-width: 350px;
   max-width: 800px;
   margin: auto;
-  opacity: 0.9;
+}
+
+form > div { /* To make headline with higher opcity than the rest of the form :) */
+  opacity: 0.75; 
 }
 
 .holder-headline {
-  font-size: 30px;
-  margin-bottom: 25px;
+  font-size: 2.3em;
+  opacity: 0.9;
 }
 
-input[type='text'] {
-  border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px;
+label {
+  margin-bottom: 10px;
+  margin-left: 3px;
+  font-size: 20px;
 }
 
-.holder-feel textarea {
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
+.body-wrapper {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  padding-top: 8rem;
+}
+
+.app-wrapper {
+  padding: 30px;
+  background: transparent;
+  border-radius: 2rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.4);
+  display: flex;
+  /* height: 120%; */
+}
+
+button > span {
+  text-transform:uppercase;
+  font-weight: 500;
+  opacity: 0.9;
 }
 
 .holder-entry {
-  opacity: 0.4;
+  opacity: 0.6;
+  min-height: 100px;
+}
+
+.holder-entry span {
+  font-size: 20px;
+}
+
+#entryHolder {
+  font-weight: 500;
+  margin-top: 10px;
 }
